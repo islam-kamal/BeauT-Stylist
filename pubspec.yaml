@@ -1,0 +1,60 @@
+name: butyprovider
+description: A new Flutter application.
+
+version: 1.0.0+1
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+dependencies:
+  cupertino_icons: ^0.1.2
+  flutter_localizations:
+    sdk: flutter
+  flutter:
+    sdk: flutter
+  intl: ^0.16.1
+  flutter_bloc: ^3.2.0
+  rxdart: ^0.23.0
+  shared_preferences: ^0.5.3+4
+  dio: ^3.0.9
+  carousel_slider: ^2.3.1
+  firebase_messaging:
+  flutter_spinkit: ^4.0.0
+  notification_permissions: ^0.4.0
+  google_maps_flutter: ^0.5.16
+  geolocator: ^4.0.0
+  location_permissions: ^2.0.2
+  location: ^2.3.5
+  pin_code_fields: ^2.3.0+3
+  flutter_staggered_animations: ^0.1.2
+  pin_code_text_field: ^1.7.1
+  flutter_calendar_carousel: ^1.4.12
+  flutter_svg: ^0.18.1
+  fluttertoast: ^7.1.1
+  tinycolor: ^1.0.2
+  table_calendar: ^2.3.2
+  image_picker: ^0.6.7+14
+
+
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path_android: "assets/icons/512.png"
+  image_path_ios: "assets/icons/512.png"
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/langs/ar.json
+    - assets/langs/en.json
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf

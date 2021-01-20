@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "192434021828",
+    "firebase_url": "https://beaut-6ceb9.firebaseio.com",
+    "project_id": "beaut-6ceb9",
+    "storage_bucket": "beaut-6ceb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192434021828:android:200fc9952f4d8ce72c3091",
+        "android_client_info": {
+          "package_name": "com.app.butyprovider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "192434021828-h04dpiub3hcimvfqfpjgne166rv1ukls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAi7iWbyxGBiuyWVCRRCUUy5DYBDggy1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "192434021828-h04dpiub3hcimvfqfpjgne166rv1ukls.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192434021828:android:ec86a891cf6995252c3091",
+        "android_client_info": {
+          "package_name": "com.wothouq.buty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "192434021828-h04dpiub3hcimvfqfpjgne166rv1ukls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAi7iWbyxGBiuyWVCRRCUUy5DYBDggy1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "192434021828-h04dpiub3hcimvfqfpjgne166rv1ukls.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
