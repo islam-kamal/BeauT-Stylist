@@ -112,7 +112,7 @@ class _MainPageState extends State<MainPage> {
                         ))),
                 BottomNavigationBarItem(
                     icon: Icon(
-                      Icons.notifications,
+                      Icons.timer,
                       size: 30,
                       color: Colors.grey,
                     ),

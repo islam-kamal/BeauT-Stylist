@@ -41,8 +41,8 @@ class _AppointmentsState extends State<Appointments>
       'Authorization': token,
     };
     NetworkUtil _util = NetworkUtil();
-    Response response = await _util.get("beautician/categories/get-categories",
-        headers: headers);
+    Response response = await _util
+        .get("beautician/work-schedule/beautician_schedule", headers: headers);
     print(response.statusCode);
     if (response.data != null) {
       print("Done");
@@ -66,9 +66,8 @@ class _AppointmentsState extends State<Appointments>
     }
     _calendarController = CalendarController();
     _animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 400),
-    );
+        vsync: this,
+        duration: const Duration(milliseconds: 400));
 
     days = [
       Days(

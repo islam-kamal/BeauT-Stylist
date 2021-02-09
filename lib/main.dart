@@ -66,6 +66,7 @@ class _MyAppState extends State<MyApp> {
         primaryColor: Color(0xFFDBB2D2),
         scaffoldBackgroundColor: Colors.white,
         fontFamily: 'Cairo',
+        appBarTheme: AppBarTheme(iconTheme: IconThemeData(color: Colors.white))
       ),
       home: Splash(
         navKey: navKey,

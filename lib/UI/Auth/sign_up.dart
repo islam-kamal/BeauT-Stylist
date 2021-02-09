@@ -160,6 +160,7 @@ class _SignUpState extends State<SignUp> {
 
                           signUpBloc.updateLat(lat);
                           signUpBloc.updateLng(lng);
+                          signUpBloc.updateAddress(address);
                           Navigator.push(
                               context,
                               MaterialPageRoute(

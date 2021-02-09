@@ -69,7 +69,7 @@ class _EditTimesState extends State<EditTimes> with TickerProviderStateMixin {
     }
     _calendarController = CalendarController();
     _animationController = AnimationController(
-      vsync: this,
+      // vsync: this,
       duration: const Duration(milliseconds: 400),
     );
 

@@ -29,11 +29,12 @@ class _NotificationsState extends State<Notifications> {
   @override
   Widget build(BuildContext context) {
     return Directionality(
-
-      textDirection:allTranslations.currentLanguage == "ar" ? TextDirection.rtl :TextDirection.ltr,
+      textDirection: allTranslations.currentLanguage == "ar"
+          ? TextDirection.rtl
+          : TextDirection.ltr,
       child: Scaffold(
           appBar: AppBar(
-              automaticallyImplyLeading: false,
+
               centerTitle: true,
               title: Image.asset(
                 "assets/images/header.png",
@@ -69,21 +70,19 @@ class _NotificationsState extends State<Notifications> {
                         : data.notifications == null
                             ? Center(
                                 child: EmptyItem(
-                                text: data.msg == "الرمز المميز غير موجود"
-                                    ? "عفواً يرجي تسجيل الدخول اولاًً "
-                                    : data.msg == "الرمز المميز غير موجود"
-                                        ? "Authorization Token Not Found"
-                                        : "Sorry You Must Log In First",
+                                text: data.msg,
                               ))
                             : AnimationLimiter(
                                 child: ListView.builder(
                                   shrinkWrap: true,
                                   physics: NeverScrollableScrollPhysics(),
                                   itemCount: data.notifications.length,
-                                  itemBuilder: (BuildContext context, int index) {
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
                                     return AnimationConfiguration.staggeredList(
                                       position: index,
-                                      duration: const Duration(milliseconds: 375),
+                                      duration:
+                                          const Duration(milliseconds: 375),
                                       child: SlideAnimation(
                                         verticalOffset: 50.0,
                                         child: notificationItem(

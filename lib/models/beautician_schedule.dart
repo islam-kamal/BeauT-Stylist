@@ -16,7 +16,7 @@ class BeauticianScheduleResponse {
     status: json["status"],
     errNum: json["errNum"],
     msg: json["msg"],
-    schedule: List<Schedule>.from(json["schedule"].map((x) => Schedule.fromJson(x))),
+    schedule:json["status"]== false ?null : List<Schedule>.from(json["schedule"].map((x) => Schedule.fromJson(x))),
   );
 
   Map<String, dynamic> toJson() => {

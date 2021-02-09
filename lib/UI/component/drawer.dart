@@ -8,6 +8,8 @@ import 'package:butyprovider/UI/side_menu/services.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../bottom_nav_bar/notifications.dart';
+
 class MyDrawer extends StatefulWidget {
   final String rate;
   final String name;
@@ -44,6 +46,8 @@ class _MyDrawerState extends State<MyDrawer> {
                   Icons.person_outline, EditProfile()),
               itemRow(
                   "${allTranslations.text("images")}", Icons.image, Images()),
+              itemRow(
+                  "${allTranslations.text("notifications")}", Icons.notifications, Notifications()),
               itemRow("${allTranslations.text("services")}", Icons.content_cut,
                   MyService()),
               itemRow("${allTranslations.text("change_language")}",

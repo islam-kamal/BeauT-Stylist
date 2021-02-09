@@ -191,7 +191,7 @@ class UserDataRepo {
       "payment_method": payment,
       "beaut_name": beaut_name,
       "lang": allTranslations.currentLanguage,
-      "city_id": 1,
+      "city_id": 11,
       "insta_link": insta_link,
       "photo": await MultipartFile.fromFile(photo.path),
       "deviceToken": preferences.getString("msgToken")
