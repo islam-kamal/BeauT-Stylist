@@ -1,5 +1,6 @@
 import 'package:butyprovider/Base/AllTranslation.dart';
 import 'package:butyprovider/UI/Auth/spash.dart';
+import 'package:butyprovider/UI/bottom_nav_bar/reservations/reservations.dart';
 import 'package:butyprovider/UI/side_menu/call_us.dart';
 import 'package:butyprovider/UI/side_menu/change_lang.dart';
 import 'package:butyprovider/UI/side_menu/edit_profile.dart';
@@ -42,14 +43,41 @@ class _MyDrawerState extends State<MyDrawer> {
                         image: NetworkImage(widget.image), fit: BoxFit.cover),
                     borderRadius: BorderRadius.circular(20)),
               ),
+              Text(
+                "${widget.name}",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 120),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.star,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "3.5",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+              ),
               itemRow("${allTranslations.text("edit_profile")}",
                   Icons.person_outline, EditProfile()),
               itemRow(
                   "${allTranslations.text("images")}", Icons.image, Images()),
-              itemRow(
-                  "${allTranslations.text("notifications")}", Icons.notifications, Notifications()),
-              itemRow("${allTranslations.text("services")}", Icons.content_cut,
-                  MyService()),
+              itemRow("${allTranslations.text("notifications")}",
+                  Icons.notifications, Notifications()),
+              itemRow("${allTranslations.text("orders_list")}",
+                  Icons.calendar_today, Reservation()),
+              // itemRow("${allTranslations.text("services")}", Icons.content_cut,
+              //     MyService()),
               itemRow("${allTranslations.text("change_language")}",
                   Icons.language, ChangeLanguage()),
               itemRow(
@@ -75,7 +103,7 @@ class _MyDrawerState extends State<MyDrawer> {
         }
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15 , horizontal: 10),
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
         child: Row(
           children: [
             Icon(

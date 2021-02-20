@@ -98,7 +98,7 @@ class _SignUpState extends State<SignUp> {
                     rowItem(Icons.phone, allTranslations.text("phone")),
                     CustomTextField(
                       validate: (String val) {
-                        if (val.length < 9) {
+                        if (val.length < 10) {
                           return "${allTranslations.text("phone_validator")}";
                         }
                       },
@@ -136,7 +136,7 @@ class _SignUpState extends State<SignUp> {
                     rowItem(Icons.lock, allTranslations.text("password")),
                     CustomTextField(
                       validate: (String val) {
-                        if (val.isEmpty) {
+                        if (val.isEmpty || val.length < 8 ) {
                           return "${allTranslations.text("password_validator")}";
                         }
                       },
@@ -157,7 +157,6 @@ class _SignUpState extends State<SignUp> {
                         if (!key.currentState.validate()) {
                           return;
                         } else {
-
                           signUpBloc.updateLat(lat);
                           signUpBloc.updateLng(lng);
                           signUpBloc.updateAddress(address);

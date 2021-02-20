@@ -1,6 +1,6 @@
 {
   "user": "User",
-  "name": "name",
+  "name": "Name (Public For Users)",
   "account_name": "account name",
   "account_name_validation": "please enter account name",
   "insta_link": "Instagram link",
@@ -134,5 +134,7 @@
   "orders_list": "Orders List",
   "person": "Person",
   "status": "Payment Status ",
-  "add_services": "Add Service"
+  "add_services": "Add Service",
+  "last_works": "Add Your Last Works"
+
 }

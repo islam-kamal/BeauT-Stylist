@@ -31,8 +31,10 @@ class LogInBloc extends Bloc<AppEvent, AppState> {
         preferenceManager.writeData(CachingKey.IS_LOGGED_IN, true);
         preferenceManager.writeData(
             CachingKey.AUTH_TOKEN, "Bearer ${userResponee.user.accessToken}");
+         preferenceManager.writeData(
+            CachingKey.RATE, "3.5");
         preferenceManager.writeData(
-            CachingKey.USER_NAME, userResponee.user.beautName);
+            CachingKey.USER_NAME, userResponee.user.ownerName);
         preferenceManager.writeData(
             CachingKey.USER_ID, userResponee.user.id);
         preferenceManager.writeData(

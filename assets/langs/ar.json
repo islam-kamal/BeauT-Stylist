@@ -1,6 +1,6 @@
 {
   "user": "مستخدم",
-  "name": "الإسم",
+  "name": "الإسم   (يظهر لجميع المستخدمين) ",
   "account_name": "اسم الحساب",
   "account_name_validation": " الرجاء ادخال اسم الحساب",
   "insta_link": "رابط الانستقرام",
@@ -90,7 +90,7 @@
   "choose_from_map": "اختيار الموقع من الخريطة",
   "location_details": "تفاصيل الموقع (رقم العمارة او الفيلا , اقرب معلم)",
   "add": "اضافة",
-  "payment_methods": "طرق الدفع",
+  "payment_methods": "طرق الدفع لعملائك",
   "add_new_card": "اضافة بطاقة اخري",
   "cash_on_delivary": "دفع عند الانتهاء",
   "default": "اختياري",
@@ -144,7 +144,8 @@
   "from": "من ",
   "to" : "الى",
   "add_work_times": "اضافة ايام عمل",
-  "edit_work_times": "تعديل وقت العمل"
+  "edit_work_times": "تعديل وقت العمل",
+  "last_works": "اضف صور خدماتك السابقة"
 }
 
 

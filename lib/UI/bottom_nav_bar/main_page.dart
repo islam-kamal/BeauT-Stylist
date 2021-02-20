@@ -41,7 +41,7 @@ class _MainPageState extends State<MainPage> {
     setState(() {
       name = _name;
       image = _image;
-      rate = _rate;
+      rate = "3.5";
     });
 
     print("Valuee ===>${name}");

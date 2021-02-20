@@ -16,7 +16,7 @@ class UserJourny {
       'Authorization': token,
     };
     return NetworkUtil.internal().get(CurrentOrdersResponse(),
-        "beautician/orders/get-new-orders?lang=${allTranslations.currentLanguage}",
+        "beautician/orders/get-pervious-orders",
         headers: headers);
   }
 

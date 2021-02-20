@@ -23,7 +23,6 @@ class CurrentReservationView extends StatefulWidget {
 class _CurrentReservationViewState extends State<CurrentReservationView> {
   @override
   void initState() {
-    currentOrdersBloc.updateType("current");
     currentOrdersBloc.add(Hydrate());
     super.initState();
   }

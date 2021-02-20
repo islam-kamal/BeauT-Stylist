@@ -172,11 +172,11 @@ class _CompleteSignUpState extends State<CompleteSignUp> {
                   rowItem(Icons.person, allTranslations.text("account_name")),
                   CustomTextField(
                     validate: (String val) {
-                      if (val.isEmpty) {
-                        return "${allTranslations.text("complete_data")}";
+                      if (val.isEmpty || val.contains("@") == false ) {
+                        return "This Filed Must Contains ${"@"}  And Must Be In English ";
                       }
                     },
-                    hint: allTranslations.text("account_name"),
+                    hint:"@username",
                     inputType: TextInputType.emailAddress,
                     value: (String val) {
                       signUpBloc.updateButeName(val);
@@ -231,6 +231,16 @@ class _CompleteSignUpState extends State<CompleteSignUp> {
                   ),
                   service_address(),
                   Padding(
+                    padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 3),
+                    child: Text(
+                      allTranslations.text("last_works"),
+                      style:
+                      TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+
+                  Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       width: double.infinity,
@@ -260,10 +270,16 @@ class _CompleteSignUpState extends State<CompleteSignUp> {
                   ),
                   CustomButton(
                     onBtnPress: () {
-                      signUpBloc.updateImages(images);
-                      signUpBloc.updatepayment(paymentMethdos);
-                      signUpBloc.updateimagee(_image);
-                      signUpBloc.add(Click());
+                      if (!key.currentState.validate()) {
+                        return;
+                      }else{
+                        signUpBloc.updateImages(images);
+                        signUpBloc.updatepayment(paymentMethdos);
+                        signUpBloc.updateimagee(_image);
+                        signUpBloc.add(Click());
+
+                      }
+
                     },
                     text: "${allTranslations.text("register")}",
                   ),
