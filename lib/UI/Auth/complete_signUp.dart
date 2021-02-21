@@ -8,7 +8,6 @@ import 'package:butyprovider/UI/CustomWidgets/AppLoader.dart';
 import 'package:butyprovider/UI/CustomWidgets/CustomButton.dart';
 import 'package:butyprovider/UI/CustomWidgets/CustomTextFormField.dart';
 import 'package:butyprovider/UI/CustomWidgets/ErrorDialog.dart';
-import 'package:butyprovider/UI/CustomWidgets/LoadingDialog.dart';
 import 'package:butyprovider/helpers/appEvent.dart';
 import 'package:butyprovider/helpers/appState.dart';
 import 'package:butyprovider/models/general_response.dart';
@@ -72,7 +71,11 @@ class _CompleteSignUpState extends State<CompleteSignUp> {
   }
 
   Future addImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await picker.getImage(
+        source: ImageSource.gallery,
+        imageQuality: 50,
+        maxHeight: 300,
+        maxWidth: 300);
     setState(() {
       pickedFile == null ? null : images.add(File(pickedFile.path));
     });
@@ -85,7 +88,11 @@ class _CompleteSignUpState extends State<CompleteSignUp> {
   }
 
   Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await picker.getImage(
+        source: ImageSource.gallery,
+        imageQuality: 50,
+        maxHeight: 300,
+        maxWidth: 300);
 
     setState(() {
       if (pickedFile != null) {
@@ -160,8 +167,7 @@ class _CompleteSignUpState extends State<CompleteSignUp> {
                                   fit: BoxFit.cover,
                                   image: _image != null
                                       ? FileImage(_image)
-                                      : NetworkImage(
-                                          "")),
+                                      : NetworkImage("")),
                               shape: BoxShape.circle,
                               border: Border.all(
                                   color: Theme.of(context).primaryColor)),
@@ -171,16 +177,16 @@ class _CompleteSignUpState extends State<CompleteSignUp> {
                   ),
                   rowItem(Icons.person, allTranslations.text("account_name")),
                   CustomTextField(
+                    dir: TextDirection.ltr,
                     validate: (String val) {
-                      if (val.isEmpty || val.contains("@") == false ) {
+                      if (val.isEmpty || val.contains("@") == false) {
                         return "This Filed Must Contains ${"@"}  And Must Be In English ";
                       }
                     },
-                    hint:"@username",
+                    hint: "@username",
                     inputType: TextInputType.emailAddress,
                     value: (String val) {
                       signUpBloc.updateButeName(val);
-
                     },
                   ),
                   rowItem(Icons.person, allTranslations.text("name")),
@@ -194,7 +200,6 @@ class _CompleteSignUpState extends State<CompleteSignUp> {
                     inputType: TextInputType.emailAddress,
                     value: (String val) {
                       signUpBloc.updateName(val);
-
                     },
                   ),
                   rowItem(Icons.perm_media, allTranslations.text("insta_link")),
@@ -232,14 +237,13 @@ class _CompleteSignUpState extends State<CompleteSignUp> {
                   service_address(),
                   Padding(
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 3),
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 3),
                     child: Text(
                       allTranslations.text("last_works"),
                       style:
-                      TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
                     ),
                   ),
-
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
@@ -272,14 +276,12 @@ class _CompleteSignUpState extends State<CompleteSignUp> {
                     onBtnPress: () {
                       if (!key.currentState.validate()) {
                         return;
-                      }else{
+                      } else {
                         signUpBloc.updateImages(images);
                         signUpBloc.updatepayment(paymentMethdos);
                         signUpBloc.updateimagee(_image);
                         signUpBloc.add(Click());
-
                       }
-
                     },
                     text: "${allTranslations.text("register")}",
                   ),

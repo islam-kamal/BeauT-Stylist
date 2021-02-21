@@ -70,7 +70,7 @@ class _NotificationsState extends State<Notifications> {
                         : data.notifications == null
                             ? Center(
                                 child: EmptyItem(
-                                text: data.msg,
+                                text:allTranslations.currentLanguage=="ar"?"لا توجد اشعارات" :"No Notifications  ",
                               ))
                             : AnimationLimiter(
                                 child: ListView.builder(

@@ -171,7 +171,33 @@ class _MyServiceState extends State<MyService> {
                 return date == null
                     ? AppLoader()
                     : ListView(
+
                         children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 10),
+                            child: Row(
+                              children: [
+                                Center(
+                                  child: Icon(
+                                    Icons.menu,
+                                    size: 25,
+                                    color: Theme.of(context).primaryColor,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                                  child: Text(
+                                    allTranslations.text("category"),
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
                           categoriesWidgets(),
                           Divider(
                             color: Theme.of(context).primaryColor,

@@ -16,6 +16,7 @@ class CustomTextField extends StatefulWidget {
   final bool secureText;
   final double raduis;
   final String initialText;
+  final TextDirection dir;
 
   const CustomTextField({
     Key key,
@@ -34,6 +35,7 @@ class CustomTextField extends StatefulWidget {
     this.onTab,
     this.onSubmitted,
     this.suffix,
+    this.dir,
   }) : super(key: key);
 
   @override
@@ -47,6 +49,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       padding: const EdgeInsets.all(8.0),
       child: TextFormField(
           // controller: widget.controller,
+          textDirection: widget.dir != null ? widget.dir : null,
           onFieldSubmitted: widget.onSubmitted,
           onTap: widget.onTab,
           maxLines: widget.lines ?? 1,

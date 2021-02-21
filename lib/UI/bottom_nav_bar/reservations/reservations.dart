@@ -18,7 +18,6 @@ class _ReservationState extends State<Reservation> {
           : TextDirection.ltr,
       child: Scaffold(
           appBar: AppBar(
-              automaticallyImplyLeading: false,
               centerTitle: true,
               title: Image.asset(
                 "assets/images/header.png",

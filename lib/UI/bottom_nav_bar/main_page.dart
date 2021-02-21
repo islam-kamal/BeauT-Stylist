@@ -137,7 +137,7 @@ class _MainPageState extends State<MainPage> {
                       size: 30,
                       color: Theme.of(context).primaryColor,
                     ),
-                    title: Text(allTranslations.text("reservation"),
+                    title: Text(allTranslations.text("services"),
                         style: TextStyle(
                           color: Colors.grey,
                           fontSize: 11,

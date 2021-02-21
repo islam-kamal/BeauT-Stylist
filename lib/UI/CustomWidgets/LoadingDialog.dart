@@ -1,3 +1,4 @@
+import 'package:butyprovider/Base/AllTranslation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -22,7 +23,7 @@ void showLoadingDialog(BuildContext mcontext) {
                   Padding(
                     padding: EdgeInsets.only(right: 20),
                     child: Text(
-                      "جاري التحميل",
+                      "${allTranslations.text("loading")}",
                       style: TextStyle(color: Theme.of(mcontext).primaryColor),
                     ),
                   )

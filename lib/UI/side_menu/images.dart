@@ -32,7 +32,8 @@ class _ImagesState extends State<Images> {
   final picker = ImagePicker();
 
   Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await picker.getImage(
+        source: ImageSource.gallery , imageQuality: 50 , maxHeight: 300 , maxWidth: 300);
     setState(() {
       pickedFile == null ? null : images.add(File(pickedFile.path));
     });

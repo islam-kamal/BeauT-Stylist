@@ -1,3 +1,4 @@
+import 'package:butyprovider/Base/AllTranslation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -59,7 +60,7 @@ void errorDialog({BuildContext context, String text, Function function}) {
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
-                              "حسنا",
+                              "${allTranslations.text("ok")}",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   decoration: TextDecoration.underline,

@@ -31,7 +31,11 @@ class _AddServiceState extends State<AddService> {
   final picker = ImagePicker();
 
   Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await picker.getImage(
+        source: ImageSource.gallery,
+        imageQuality: 50,
+        maxHeight: 300,
+        maxWidth: 300);
 
     setState(() {
       if (pickedFile != null) {
@@ -252,8 +256,9 @@ class _AddServiceState extends State<AddService> {
       height: 60,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: ListView(
+          shrinkWrap: true,
+          scrollDirection: Axis.horizontal,
           children: [
             InkWell(
               onTap: () {
@@ -290,6 +295,7 @@ class _AddServiceState extends State<AddService> {
                 ],
               ),
             ),
+            SizedBox(width: 20,),
             InkWell(
               onTap: () {
                 setState(() {
@@ -349,7 +355,8 @@ class _AddServiceState extends State<AddService> {
       "price": price,
       "estimated_time": time,
       "location": at_home == true ? 0 : 1,
-      "service_icon":imagee ==null ? null : await MultipartFile.fromFile(imagee.path),
+      "service_icon":
+          imagee == null ? null : await MultipartFile.fromFile(imagee.path),
       "beautician_id": id
     });
     Map<String, String> headers = {
