@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                     "${allTranslations.text("orders_list")}",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                   ),
-                data.data.orders.length==0 ? EmptyItem():  ListView.builder(
+                data.data.orders.length==0 ? EmptyItem(text: allTranslations.text("no_requests"),):  ListView.builder(
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
                       itemCount: data.data.orders.length,
@@ -258,7 +258,7 @@ class _HomePageState extends State<HomePage> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Container(
-        height: 80,
+        height: 100,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5),
           child: Row(

@@ -32,8 +32,9 @@ dependencies:
   tinycolor: ^1.0.2
   table_calendar: ^2.3.2
   image_picker: ^0.6.7+14
-
-
+  flutter_image_compress:
+  path_provider:
+  image_cropper:
 
 flutter_icons:
   android: true

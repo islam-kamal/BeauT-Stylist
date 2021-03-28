@@ -149,6 +149,11 @@
   "last_works": "add photos of your previous services",
   "loading": "Loading .. ",
   "ok" : " OK  ! ",
-  "category": "Category "
-
+  "category": "Category ",
+  "no_requests": "No Requests",
+  "add_photo": "Add Image",
+  "camera": "Camera",
+  "gallery": "Gallery",
+  "this_day": "Close This Day Only",
+  "all_dayes": "Close This Day Every Week "
 }

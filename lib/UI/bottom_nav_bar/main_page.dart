@@ -4,8 +4,6 @@ import 'package:butyprovider/UI/component/drawer.dart';
 import 'package:butyprovider/UI/side_menu/services.dart';
 import 'package:butyprovider/helpers/shared_preference_manger.dart';
 import 'package:flutter/material.dart';
-
-import 'Appointments.dart';
 import 'Beautican_schedule.dart';
 import 'more.dart';
 
@@ -112,12 +110,12 @@ class _MainPageState extends State<MainPage> {
                         ))),
                 BottomNavigationBarItem(
                     icon: Icon(
-                      Icons.timer,
+                      Icons.calendar_today,
                       size: 30,
                       color: Colors.grey,
                     ),
                     activeIcon: Icon(
-                      Icons.timer,
+                      Icons.calendar_today,
                       size: 30,
                       color: Theme.of(context).primaryColor,
                     ),

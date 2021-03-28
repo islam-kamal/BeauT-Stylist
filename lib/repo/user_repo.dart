@@ -120,7 +120,7 @@ class UserDataRepo {
       String newPassword,
       String mobile,
       String currentPassword,
-      String confirmPassword) async {
+      String confirmPassword ) async {
     var mSharedPreferenceManager = SharedPreferenceManager();
     var email = await mSharedPreferenceManager.readString(CachingKey.EMAIL);
     var token =

@@ -1,9 +1,10 @@
 import 'dart:convert';
+
 import 'package:butyprovider/Base/AllTranslation.dart';
 import 'package:butyprovider/UI/CustomWidgets/AppLoader.dart';
+import 'package:butyprovider/UI/CustomWidgets/CustomButton.dart';
 import 'package:butyprovider/UI/CustomWidgets/LoadingDialog.dart';
 import 'package:butyprovider/helpers/shared_preference_manger.dart';
-import 'package:butyprovider/models/beat_times.dart';
 import 'package:butyprovider/models/dayes_model.dart';
 import 'package:butyprovider/models/times.dart';
 import 'package:dio/dio.dart';
@@ -25,33 +26,7 @@ class _BeauticanTimesState extends State<BeauticanTimes>
 
   // List<String> timeList = List();
 
-  // BeauticianScheduleResponse timesRespone = BeauticianScheduleResponse();
   String name, datee, from, to;
-
-  // void getData() async {
-  //   print("getting Cats");
-  //   var mSharedPreferenceManager = SharedPreferenceManager();
-  //   var token =
-  //       await mSharedPreferenceManager.readString(CachingKey.AUTH_TOKEN);
-  //   print(token);
-  //   Map<String, String> headers = {
-  //     'Authorization': token,
-  //   };
-  //   NetworkUtil _util = NetworkUtil();
-  //   Response response = await _util
-  //       .get("beautician/work-schedule/beautician_schedule", headers: headers);
-  //   print(response.statusCode);
-  //   if (response.data != null) {
-  //     print("Done");
-  //     setState(() {
-  //       timesRespone = BeauticianScheduleResponse.fromJson(
-  //           json.decode(response.toString()));
-  //     });
-  //   } else {
-  //     print("ERROR");
-  //     print(response.data.toString());
-  //   }
-  // }
 
   HoursModel hours = HoursModel();
   bool isloading = true;
@@ -60,20 +35,20 @@ class _BeauticanTimesState extends State<BeauticanTimes>
     print("Times");
     var mSharedPreferenceManager = SharedPreferenceManager();
     var token =
-    await mSharedPreferenceManager.readString(CachingKey.AUTH_TOKEN);
+        await mSharedPreferenceManager.readString(CachingKey.AUTH_TOKEN);
     print(token);
     Map<String, String> headers = {
       'Authorization': token,
     };
     NetworkUtil _util = NetworkUtil();
     Response response =
-    await _util.get("beautician/work-schedule/times", headers: headers);
+        await _util.get("beautician/work-schedule/times", headers: headers);
     print(response.statusCode);
     if (response.data != null) {
       print("Done");
       setState(() {
         hours = HoursModel.fromJson(json.decode(response.toString()));
-        getBeautTimes();
+        isloading = false;
       });
     } else {
       print("ERROR");
@@ -82,13 +57,12 @@ class _BeauticanTimesState extends State<BeauticanTimes>
   }
 
   void updatetime(int id, int status) async {
-
     showLoadingDialog(context);
     print("ID ==== > ${id} ");
-    print("Avilable ==== > ${status== 0 ?"No" : "Yes"} ");
+    print("Avilable ==== > ${status == 0 ? "No" : "Yes"} ");
     var mSharedPreferenceManager = SharedPreferenceManager();
     var token =
-    await mSharedPreferenceManager.readString(CachingKey.AUTH_TOKEN);
+        await mSharedPreferenceManager.readString(CachingKey.AUTH_TOKEN);
     print(token);
     Map<String, String> headers = {
       'Authorization': token,
@@ -101,47 +75,8 @@ class _BeauticanTimesState extends State<BeauticanTimes>
     if (response.data["status"] == true) {
       print("Done");
       Navigator.pop(context);
-      isloading=true;
+      isloading = true;
       getAllTimes();
-    } else {
-      print("ERROR");
-      print(response.data.toString());
-    }
-  }
-
-  BeatTHoursResponse beautTimes = BeatTHoursResponse();
-
-  void getBeautTimes() async {
-    print("Times");
-    var mSharedPreferenceManager = SharedPreferenceManager();
-    var token =
-    await mSharedPreferenceManager.readString(CachingKey.AUTH_TOKEN);
-    print(token);
-    Map<String, String> headers = {
-      'Authorization': token,
-    };
-    NetworkUtil _util = NetworkUtil();
-    Response response =
-    await _util.get("beautician/work-schedule/get-times", headers: headers);
-    print(response.statusCode);
-    if (response.data != null) {
-      print("Done");
-      setState(() {
-        beautTimes =
-            BeatTHoursResponse.fromJson(json.decode(response.toString()));
-        if (beautTimes.schedule != null) {
-          for (int i = 0; i < hours.data.length; i++) {
-            for (int x = 0; x < beautTimes.schedule.length; x++) {
-              if (hours.data[i].id == beautTimes.schedule[x].id) {
-                setState(() {
-                  hours.data[i].available = true;
-                });
-              }
-            }
-          }
-        }
-        isloading = false;
-      });
     } else {
       print("ERROR");
       print(response.data.toString());
@@ -152,94 +87,91 @@ class _BeauticanTimesState extends State<BeauticanTimes>
     return isloading == true
         ? AppLoader()
         : Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: GridView.builder(
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          itemCount: hours.data.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, childAspectRatio: 16 / 4),
-          itemBuilder: (context, index) {
-            return InkWell(
-              onTap: () {
-                // for (int i = 0; i < hours.data.length; i++) {
-                //   setState(() {
-                //     hours.data[i].available = false;
-                //   });
-                // }
-                // setState(() {
-                //   hours.data[index].available =
-                //       !hours.data[index].available;
-                // });
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: GridView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: hours.data.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2, childAspectRatio: 16 / 4),
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () {
+                      // for (int i = 0; i < hours.data.length; i++) {
+                      //   setState(() {
+                      //     hours.data[i].available = false;
+                      //   });
+                      // }
+                      // setState(() {
+                      //   hours.data[index].available =
+                      //       !hours.data[index].available;
+                      // });
 
-                updatetime(hours.data[index].id,
-                    hours.data[index].available == true ? 0 : 1);
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    " 00 : ${hours.data[index].time} PM",
-                    style: TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25),
-                    child: Stack(
+                      updatetime(hours.data[index].id,
+                          hours.data[index].available == true ? 0 : 1);
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        Text(
+                          " ${hours.data[index].time} PM",
+                          textDirection: TextDirection.ltr,
+                          style: TextStyle(
+                              fontSize: 13, fontWeight: FontWeight.bold),
+                        ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 3),
-                          child: Container(
-                            width: 60,
-                            height: 25,
-                            decoration: BoxDecoration(
-                                color: Colors.grey[500],
-                                borderRadius: BorderRadius.circular(50)),
+                          padding: const EdgeInsets.symmetric(horizontal: 25),
+                          child: Stack(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 3),
+                                child: Container(
+                                  width: 70,
+                                  height: 32,
+                                  decoration: BoxDecoration(
+                                      color: Colors.grey[300],
+                                      borderRadius: BorderRadius.circular(50)),
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: hours.data[index].available == true
+                                        ? 35
+                                        : 1,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 4),
+                                    child: Container(
+                                      width: 29,
+                                      height: 29,
+                                      decoration: BoxDecoration(
+                                          color: hours.data[index].available ==
+                                                  true
+                                              ? Colors.green
+                                              : Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(50)),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
-                        ),
-                        Row(
-                          children: [
-                            SizedBox(
-                              width: hours.data[index].available == true
-                                  ? 35
-                                  : 0,
-                            ),
-                            Container(
-                              width: 30,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                  color:hours.data[index].available == true
-                                      ?Colors.red : Theme
-                                      .of(context)
-                                      .primaryColor,
-                                  borderRadius:
-                                  BorderRadius.circular(50)),
-                            ),
-                          ],
-                        ),
+                        )
                       ],
                     ),
-                  )
-                ],
-              ),
-            );
-          }),
-    );
+                  );
+                }),
+          );
   }
 
   @override
   void initState() {
-    // for (int i = 0; i < 24; i++) {
-    //   setState(() {
-    //     timeList.add(" 00 : ${i} ");
-    //   });
-    //   // print(timeList);
-    // }
     getAllTimes();
     _calendarController = CalendarController();
     _animationController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 400));
-
     days = [
       Days(
           id: 1,
@@ -256,7 +188,7 @@ class _BeauticanTimesState extends State<BeauticanTimes>
       Days(
           id: 4,
           name:
-          allTranslations.currentLanguage == "ar" ? "الثلاثاء" : "Tuesday",
+              allTranslations.currentLanguage == "ar" ? "الثلاثاء" : "Tuesday",
           isSellected: false),
       Days(
           id: 5,
@@ -313,10 +245,7 @@ class _BeauticanTimesState extends State<BeauticanTimes>
                   ),
                   Container(
                     height: 40,
-                    width: MediaQuery
-                        .of(context)
-                        .size
-                        .width - 70,
+                    width: MediaQuery.of(context).size.width - 70,
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemCount: days.length,
@@ -335,12 +264,9 @@ class _BeauticanTimesState extends State<BeauticanTimes>
                             },
                             child: Padding(
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 5),
+                                  const EdgeInsets.symmetric(horizontal: 5),
                               child: Container(
-                                width: MediaQuery
-                                    .of(context)
-                                    .size
-                                    .width / 4,
+                                width: MediaQuery.of(context).size.width / 4,
                                 decoration: BoxDecoration(
                                     color: days[index].isSellected == false
                                         ? Colors.grey[200]
@@ -379,52 +305,32 @@ class _BeauticanTimesState extends State<BeauticanTimes>
     );
   }
 
-  // void AddDayAPI() async {
-  //   showLoadingDialog(context);
-  //
-  //   var mSharedPreferenceManager = SharedPreferenceManager();
-  //   var token =
-  //       await mSharedPreferenceManager.readString(CachingKey.AUTH_TOKEN);
-  //   int id = await mSharedPreferenceManager.readInteger(CachingKey.USER_ID);
-  //   FormData formData = FormData.fromMap({
-  //     "lang": allTranslations.currentLanguage,
-  //     "day_name": ["${name}"],
-  //     "day_date": [datee],
-  //     "work_from": ["${from}"],
-  //     "work_to": ["${to}"],
-  //     "beautician_id": id
-  //   });
-  //
-  //   print(formData.toString());
-  //   Map<String, String> headers = {
-  //     'Authorization': token,
-  //   };
-  //   NetworkUtil _util = NetworkUtil();
-  //   Response response = await _util.post("beautician/work-schedule/store",
-  //       body: formData, headers: headers);
-  //   print(response.statusCode);
-  //   if (response.data["status"] != false) {
-  //     Navigator.pop(context);
-  //     onDoneDialog(
-  //         context: context,
-  //         text: "${response.data["msg"]}",
-  //         function: () {
-  //           Navigator.pushAndRemoveUntil(
-  //               context,
-  //               MaterialPageRoute(
-  //                 builder: (context) => MainPage(
-  //                   index: 1,
-  //                 ),
-  //               ),
-  //               (Route<dynamic> route) => false);
-  //         });
-  //   } else {
-  //     print("ERROR");
-  //     Navigator.pop(context);
-  //     errorDialog(context: context, text: response.data["msg"]);
-  //     print(response.data.toString());
-  //   }
-  // }
+  void showdialog() {
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return Dialog(
+            backgroundColor: Theme.of(context).primaryColor,
+            elevation: 20,
+            child: Container(
+                height: 290,
+                width: 120,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                child: Column(
+                  children: [
+                    CustomButton(
+                      text: "${allTranslations.text("this_day")}",
+                    ),
+                    CustomButton(
+                      text: "${allTranslations.text("all_dayes")}",
+                    ),
+                  ],
+                )),
+          );
+        });
+  }
 
   Widget _buildTableCalendar() {
     return TableCalendar(
@@ -440,14 +346,12 @@ class _BeauticanTimesState extends State<BeauticanTimes>
       },
       calendarStyle: CalendarStyle(
           highlightToday: false,
-          selectedColor: Theme
-              .of(context)
-              .primaryColor,
+          selectedColor: Theme.of(context).primaryColor,
           outsideDaysVisible: false,
           weekendStyle: TextStyle(color: Colors.black),
           holidayStyle: TextStyle(color: Color(0xFFBABDC3))),
       headerStyle:
-      HeaderStyle(formatButtonVisible: false, centerHeaderTitle: true),
+          HeaderStyle(formatButtonVisible: false, centerHeaderTitle: true),
       onDaySelected: (date, events, holidays) {
         setState(() {
           datee = date.toString().substring(0, 10);
@@ -462,15 +366,13 @@ class _BeauticanTimesState extends State<BeauticanTimes>
               margin: const EdgeInsets.all(8.0),
               padding: const EdgeInsets.only(top: 3),
               decoration: BoxDecoration(
-                  color: Theme
-                      .of(context)
-                      .primaryColor,
+                  color: Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(5)),
               child: Center(
                 child: Text(
                   '${date.day}',
                   style:
-                  TextStyle(color: Colors.white).copyWith(fontSize: 16.0),
+                      TextStyle(color: Colors.white).copyWith(fontSize: 16.0),
                 ),
               ),
             ),
@@ -502,9 +404,7 @@ class _BeauticanTimesState extends State<BeauticanTimes>
           ),
         ),
         decoration: BoxDecoration(
-            border: Border.all(color: Theme
-                .of(context)
-                .primaryColor),
+            border: Border.all(color: Theme.of(context).primaryColor),
             borderRadius: BorderRadius.circular(10)),
       ),
     );

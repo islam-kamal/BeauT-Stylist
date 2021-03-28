@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:butyprovider/Base/AllTranslation.dart';
 import 'package:butyprovider/Bolcs/getServicesBloc.dart';
 import 'package:butyprovider/UI/CustomWidgets/AppLoader.dart';
@@ -16,6 +17,7 @@ import 'package:butyprovider/models/services_response.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../NetWorkUtil.dart';
 
 class MyService extends StatefulWidget {
@@ -25,8 +27,10 @@ class MyService extends StatefulWidget {
 
 class _MyServiceState extends State<MyService> {
   String cat_name;
+
   @override
   void initState() {
+    getCats();
     getServicesBloc.add(Hydrate());
     super.initState();
   }
@@ -60,7 +64,7 @@ class _MyServiceState extends State<MyService> {
   CategoriesResponse ress = CategoriesResponse();
 
   void getCats() async {
-    print("getting Cats");
+    print(" ==============>getting Cats");
     var mSharedPreferenceManager = SharedPreferenceManager();
     var token =
         await mSharedPreferenceManager.readString(CachingKey.AUTH_TOKEN);
@@ -171,7 +175,6 @@ class _MyServiceState extends State<MyService> {
                 return date == null
                     ? AppLoader()
                     : ListView(
-
                         children: [
                           Padding(
                             padding: const EdgeInsets.symmetric(
@@ -186,7 +189,8 @@ class _MyServiceState extends State<MyService> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 10),
                                   child: Text(
                                     allTranslations.text("category"),
                                     style: TextStyle(
@@ -197,7 +201,6 @@ class _MyServiceState extends State<MyService> {
                               ],
                             ),
                           ),
-
                           categoriesWidgets(),
                           Divider(
                             color: Theme.of(context).primaryColor,
@@ -233,7 +236,8 @@ class _MyServiceState extends State<MyService> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 5),
                                       child: Text(
                                         allTranslations.text("add_services"),
                                         style: TextStyle(
