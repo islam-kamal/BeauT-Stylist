@@ -142,12 +142,12 @@ class _MainPageState extends State<MainPage> {
                         ))),
                 BottomNavigationBarItem(
                     icon: Icon(
-                      Icons.person,
+                      Icons.menu,
                       size: 30,
                       color: Colors.grey,
                     ),
                     activeIcon: Icon(
-                      Icons.person,
+                      Icons.menu,
                       size: 30,
                       color: Theme.of(context).primaryColor,
                     ),

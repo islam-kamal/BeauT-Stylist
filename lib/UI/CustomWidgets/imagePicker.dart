@@ -1,3 +1,4 @@
+/*
 import 'dart:io';
 import 'package:butyprovider/Base/AllTranslation.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
@@ -122,4 +123,4 @@ class ImagePickerDialog {
                           ]))));
         });
   }
-}
+}*/

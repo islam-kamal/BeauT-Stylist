@@ -38,7 +38,7 @@ class _CustomCarouselState extends State<CustomCarousel> {
               viewportFraction: 0.99,
               initialPage: 0,
               disableCenter: true,
-              pageSnapping: true,
+             // pageSnapping: true,
               enableInfiniteScroll: true,
               reverse: false,
               autoPlay: true,

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:butyprovider/Base/Notifications.dart';
 import 'package:butyprovider/UI/Auth/login.dart';
 import 'package:butyprovider/UI/bottom_nav_bar/main_page.dart';
 import 'package:butyprovider/helpers/shared_preference_manger.dart';
@@ -20,8 +21,13 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
+  final GlobalKey<NavigatorState> navKey = GlobalKey();
+  AppPushNotifications appPushNotifications = AppPushNotifications();
   @override
   void initState() {
+    setState(() {
+      appPushNotifications.notificationSetup(navKey);
+    });
     _loadData();
     super.initState();
   }

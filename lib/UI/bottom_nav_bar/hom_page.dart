@@ -81,14 +81,6 @@ class _HomePageState extends State<HomePage> {
                           data.data.totalRevenue, "sar"),
                     ],
                   ),
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //   children: [
-                  //
-                  //     Header("${allTranslations.text("canceled_order_number")}",
-                  //         data.data.canceledOrderNumber, "num"),
-                  //   ],
-                  // ),
                   Text(
                     "${allTranslations.text("orders_list")}",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
@@ -208,13 +200,12 @@ class _HomePageState extends State<HomePage> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Container(
-        width: MediaQuery.of(context).size.width / 2.2,
-        height: 80,
+     //   width: MediaQuery.of(context).size.width / 2.5,
+        height: MediaQuery.of(context).size.width /4,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 5),
+          padding: const EdgeInsets.symmetric(horizontal: 1),
           child: Column(
             children: [
-
               Row(
                 children: [
                   Container(
@@ -256,9 +247,9 @@ class _HomePageState extends State<HomePage> {
 
   Widget VisitsHeader(String lable, int value, String type) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5),
+      padding: const EdgeInsets.symmetric(vertical: 20,),
       child: Container(
-        height: 100,
+        height: MediaQuery.of(context).size.width/3.5,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 5),
           child: Row(

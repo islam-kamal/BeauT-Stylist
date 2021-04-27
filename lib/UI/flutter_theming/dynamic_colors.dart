@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:tinycolor/tinycolor.dart';
@@ -117,7 +118,9 @@ class DynamicThemeState extends State<DynamicTheme> {
                     letterSpacing: 0.0,
                     fontFamily: fontFamily)),
         appBarTheme: AppBarTheme(elevation: 0.0, color: Color(lightThemeConfig.surfaceBright)),
-        colorScheme: Theme.of(context).colorScheme.copyWith(onPrimary: TinyColor(Color(lightThemeConfig.primary)).isLight() ? Colors.black : Colors.white));
+        colorScheme: Theme.of(context).colorScheme.copyWith(
+          onPrimary: TinyColor(Color(lightThemeConfig.primary)).isLight() ? Colors.black : Colors.white)
+            );
 
     _darkTheme = ThemeData(
         brightness: Brightness.dark,
@@ -197,3 +200,4 @@ class DynamicThemeHelper extends InheritedWidget {
     return false;
   }
 }
+*/

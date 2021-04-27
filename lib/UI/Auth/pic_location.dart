@@ -90,15 +90,16 @@ class _ChooseLocationState extends State<ChooseLocation> {
 
   Widget _confirmButton(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15),
+      padding: EdgeInsets.symmetric(horizontal: 25),
       child: Container(
         height: 50,
+
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
           color: Theme.of(context).primaryColor,
         ),
-        width: MediaQuery.of(context).size.width,
+        width: MediaQuery.of(context).size.width/1.5,
         child: Center(
           child: Text(
             "Ok",
@@ -149,6 +150,8 @@ class _ChooseLocationState extends State<ChooseLocation> {
                           print('LAT    ' + currentLat.toString());
                           print('LONG    ' + currentLong.toString());
                         },
+                        myLocationEnabled: true,
+                        myLocationButtonEnabled: true,
                         initialCameraPosition: CameraPosition(
                             target: LatLng(currentLat, currentLong),
                             zoom: 15.0),

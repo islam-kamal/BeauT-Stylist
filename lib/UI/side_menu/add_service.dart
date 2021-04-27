@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:butyprovider/Base/AllTranslation.dart';
+import 'package:butyprovider/NetWorkUtil.dart';
 import 'package:butyprovider/UI/CustomWidgets/CustomBottomSheet.dart';
 import 'package:butyprovider/UI/CustomWidgets/CustomButton.dart';
 import 'package:butyprovider/UI/CustomWidgets/CustomTextFormField.dart';
@@ -15,7 +16,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../NetWorkUtil.dart';
 
 class AddService extends StatefulWidget {
   @override
@@ -24,12 +24,12 @@ class AddService extends StatefulWidget {
 
 class _AddServiceState extends State<AddService> {
   String name_ar, name_en, desc_ar, desc_en, price, time, cat_name;
-  File imagee;
+
   int location_id, cat_id, location;
   bool at_home = true;
 
   final picker = ImagePicker();
-
+  File imagee;
   Future getImage() async {
     final pickedFile = await picker.getImage(
         source: ImageSource.gallery,

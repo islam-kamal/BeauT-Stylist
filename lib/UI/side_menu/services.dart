@@ -146,7 +146,7 @@ class _MyServiceState extends State<MyService> {
       child: Scaffold(
         appBar: AppBar(
             automaticallyImplyLeading: false,
-            leading: InkWell(
+          /*  leading: InkWell(
                 onTap: () {
                   Navigator.push(
                       context,
@@ -158,7 +158,7 @@ class _MyServiceState extends State<MyService> {
                 child: Icon(
                   Icons.arrow_back_ios,
                   color: Colors.white,
-                )),
+                )),*/
             centerTitle: true,
             title: Text(
               allTranslations.text("services"),
