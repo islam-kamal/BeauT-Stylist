@@ -98,7 +98,7 @@ class _CallUsState extends State<CallUs> {
               break;
             case 'WhatsApp':
               _launchURL(
-                  'https://api.whatsapp.com/send?phone=01551885357');
+                  'https://api.whatsapp.com/send?phone=+966 53 020 9074');
               break;
             case 'Instagram':
               _launchURL('https://instagram.com/beaut_ksa?igshid=ut2jzgyerofo');
