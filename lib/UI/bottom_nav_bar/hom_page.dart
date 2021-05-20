@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:butyprovider/Base/AllTranslation.dart';
-import 'package:butyprovider/UI/CustomWidgets/AppLoader.dart';
-import 'package:butyprovider/UI/CustomWidgets/EmptyItem.dart';
-import 'package:butyprovider/helpers/shared_preference_manger.dart';
-import 'package:butyprovider/models/home_page_response.dart';
+import 'package:BeauT_Stylist/Base/AllTranslation.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/AppLoader.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/EmptyItem.dart';
+import 'package:BeauT_Stylist/helpers/shared_preference_manger.dart';
+import 'package:BeauT_Stylist/models/home_page_response.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

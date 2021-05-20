@@ -1,4 +1,4 @@
-import 'package:butyprovider/helpers/enumeration.dart';
+import 'package:BeauT_Stylist/helpers/enumeration.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferenceManager {

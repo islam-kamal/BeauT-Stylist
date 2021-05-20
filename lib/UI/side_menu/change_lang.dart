@@ -1,6 +1,6 @@
-import 'package:butyprovider/Base/AllTranslation.dart';
-import 'package:butyprovider/UI/bottom_nav_bar/main_page.dart';
-import 'package:butyprovider/main.dart';
+import 'package:BeauT_Stylist/Base/AllTranslation.dart';
+import 'package:BeauT_Stylist/UI/bottom_nav_bar/main_page.dart';
+import 'package:BeauT_Stylist/main.dart';
 import 'package:flutter/material.dart';
 
 class ChangeLanguage extends StatefulWidget {

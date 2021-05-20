@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:butyprovider/Base/Notifications.dart';
-import 'package:butyprovider/UI/Auth/login.dart';
-import 'package:butyprovider/UI/bottom_nav_bar/main_page.dart';
-import 'package:butyprovider/helpers/shared_preference_manger.dart';
+import 'package:BeauT_Stylist/Base/Notifications.dart';
+import 'package:BeauT_Stylist/UI/Auth/login.dart';
+import 'package:BeauT_Stylist/UI/bottom_nav_bar/main_page.dart';
+import 'package:BeauT_Stylist/helpers/shared_preference_manger.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';

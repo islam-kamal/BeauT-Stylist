@@ -1,14 +1,14 @@
 import 'dart:convert';
 
-import 'package:butyprovider/Base/AllTranslation.dart';
-import 'package:butyprovider/UI/CustomWidgets/CustomBottomSheet.dart';
-import 'package:butyprovider/UI/CustomWidgets/CustomButton.dart';
-import 'package:butyprovider/UI/CustomWidgets/ErrorDialog.dart';
-import 'package:butyprovider/UI/CustomWidgets/LoadingDialog.dart';
-import 'package:butyprovider/UI/CustomWidgets/on_done_dialog.dart';
-import 'package:butyprovider/helpers/shared_preference_manger.dart';
-import 'package:butyprovider/models/beautician_schedule.dart';
-import 'package:butyprovider/models/dayes_model.dart';
+import 'package:BeauT_Stylist/Base/AllTranslation.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/CustomBottomSheet.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/CustomButton.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/ErrorDialog.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/LoadingDialog.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/on_done_dialog.dart';
+import 'package:BeauT_Stylist/helpers/shared_preference_manger.dart';
+import 'package:BeauT_Stylist/models/beautician_schedule.dart';
+import 'package:BeauT_Stylist/models/dayes_model.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';

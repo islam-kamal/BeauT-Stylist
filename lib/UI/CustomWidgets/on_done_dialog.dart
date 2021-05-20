@@ -1,4 +1,4 @@
-import 'package:butyprovider/Base/AllTranslation.dart';
+import 'package:BeauT_Stylist/Base/AllTranslation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

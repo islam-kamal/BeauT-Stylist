@@ -1,4 +1,4 @@
-package com.app.butyprovider
+package com.app.BeauT_Stylist
 
 import io.flutter.embedding.android.FlutterActivity
 

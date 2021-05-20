@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:butyprovider/helpers/appEvent.dart';
-import 'package:butyprovider/helpers/appState.dart';
-import 'package:butyprovider/repo/images_repo.dart';
-import 'package:butyprovider/repo/user_repo.dart';
+import 'package:BeauT_Stylist/helpers/appEvent.dart';
+import 'package:BeauT_Stylist/helpers/appState.dart';
+import 'package:BeauT_Stylist/repo/images_repo.dart';
+import 'package:BeauT_Stylist/repo/user_repo.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:rxdart/subjects.dart';
 

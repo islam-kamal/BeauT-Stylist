@@ -1,4 +1,4 @@
-# butyprovider
+# BeauT_Stylist
 
 A new Flutter application.
 

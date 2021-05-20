@@ -1,8 +1,8 @@
-import 'package:butyprovider/UI/Auth/sign_up.dart';
-import 'package:butyprovider/UI/CustomWidgets/CustomButton.dart';
-import 'package:butyprovider/UI/bottom_nav_bar/main_page.dart';
+import 'package:BeauT_Stylist/UI/Auth/sign_up.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/CustomButton.dart';
+import 'package:BeauT_Stylist/UI/bottom_nav_bar/main_page.dart';
 import 'package:flutter/material.dart';
-import 'package:butyprovider/Base/AllTranslation.dart';
+import 'package:BeauT_Stylist/Base/AllTranslation.dart';
 import 'login.dart';
 
 class Intro extends StatelessWidget {

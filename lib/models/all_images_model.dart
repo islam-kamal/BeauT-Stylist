@@ -1,4 +1,4 @@
-import 'package:butyprovider/helpers/network-mappers.dart';
+import 'package:BeauT_Stylist/helpers/network-mappers.dart';
 
 class GallaryResponse extends BaseMappable {
   bool status;

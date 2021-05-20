@@ -1,16 +1,17 @@
 import 'dart:convert';
 
-import 'package:butyprovider/Base/AllTranslation.dart';
-import 'package:butyprovider/UI/CustomWidgets/AppLoader.dart';
-import 'package:butyprovider/UI/CustomWidgets/CustomButton.dart';
-import 'package:butyprovider/UI/CustomWidgets/LoadingDialog.dart';
-import 'package:butyprovider/helpers/shared_preference_manger.dart';
-import 'package:butyprovider/models/dayes_model.dart';
-import 'package:butyprovider/models/times.dart';
+import 'package:BeauT_Stylist/Base/AllTranslation.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/AppLoader.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/CustomButton.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/LoadingDialog.dart';
+import 'package:BeauT_Stylist/helpers/shared_preference_manger.dart';
+import 'package:BeauT_Stylist/models/dayes_model.dart';
+import 'package:BeauT_Stylist/models/times.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_calendar_carousel/classes/event.dart';
 import 'package:table_calendar/table_calendar.dart';
-
+import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart';
 import '../../NetWorkUtil.dart';
 
 class BeauticanTimes extends StatefulWidget {
@@ -21,8 +22,12 @@ class BeauticanTimes extends StatefulWidget {
 class _BeauticanTimesState extends State<BeauticanTimes>
     with TickerProviderStateMixin {
   CalendarController _calendarController;
+  DateTime _currentDate = DateTime.now();
+
+
   AnimationController _animationController;
   List<Days> days = [];
+  CalendarCarousel _calendarCarousel;
 
   // List<String> timeList = List();
 
@@ -171,7 +176,7 @@ class _BeauticanTimesState extends State<BeauticanTimes>
     getAllTimes();
     _calendarController = CalendarController();
     _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 400));
+      vsync:this, duration: const Duration(milliseconds: 400));
     days = [
       Days(
           id: 1,
@@ -219,6 +224,36 @@ class _BeauticanTimesState extends State<BeauticanTimes>
 
   @override
   Widget build(BuildContext context) {
+    _calendarCarousel = CalendarCarousel<Event>(
+      nextMonthDayBorderColor: Theme.of(context).primaryColor,
+      prevMonthDayBorderColor: Theme.of(context).primaryColor,
+      onDayPressed: (DateTime date, List<Event> events) {
+        this.setState(() => _currentDate = date);
+        events.forEach((event) => print(event.title));
+        datee = date.toString().substring(0, 10);
+        print(date.toString().substring(0, 10));
+        //createOrderBloc.updateDate(date.toString().substring(0, 10));
+      },
+      isScrollable: true,
+      thisMonthDayBorderColor: Colors.grey,
+      weekFormat: false,
+      height: MediaQuery.of(context).size.width,
+      selectedDateTime: _currentDate,
+      customGridViewPhysics: NeverScrollableScrollPhysics(),
+      markedDateShowIcon: true,
+      selectedDayTextStyle: TextStyle(
+        color: Colors.white,
+      ),
+      todayTextStyle: TextStyle(
+        color: Colors.white,
+      ),
+      selectedDayButtonColor: Color(0xFFDBB2D2),
+      selectedDayBorderColor: Color(0xFFDBB2D2),
+      minSelectedDate: _currentDate.subtract(Duration(days: 360)),
+      maxSelectedDate: _currentDate.add(Duration(days: 360)),
+      todayButtonColor: Colors.green,
+      todayBorderColor: Colors.white,
+    );
     return Directionality(
       textDirection: allTranslations.currentLanguage == "ar"
           ? TextDirection.rtl
@@ -233,7 +268,8 @@ class _BeauticanTimesState extends State<BeauticanTimes>
             )),
         body: ListView(
           children: [
-            _buildTableCalendar(),
+            _calendarCarousel,
+         //   _buildTableCalendar(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5),
               child: Row(
@@ -332,7 +368,7 @@ class _BeauticanTimesState extends State<BeauticanTimes>
         });
   }
 
-  Widget _buildTableCalendar() {
+/*  Widget _buildTableCalendar() {
     return TableCalendar(
       startDay: DateTime.now(),
       calendarController: _calendarController,
@@ -380,7 +416,7 @@ class _BeauticanTimesState extends State<BeauticanTimes>
         },
       ),
     );
-  }
+  }*/
 
   Widget timeContainer(String lable) {
     return Padding(

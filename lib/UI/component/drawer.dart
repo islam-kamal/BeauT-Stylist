@@ -1,11 +1,11 @@
-import 'package:butyprovider/Base/AllTranslation.dart';
-import 'package:butyprovider/UI/Auth/spash.dart';
-import 'package:butyprovider/UI/bottom_nav_bar/reservations/reservations.dart';
-import 'package:butyprovider/UI/side_menu/call_us.dart';
-import 'package:butyprovider/UI/side_menu/change_lang.dart';
-import 'package:butyprovider/UI/side_menu/edit_profile.dart';
-import 'package:butyprovider/UI/side_menu/images.dart';
-import 'package:butyprovider/UI/side_menu/services.dart';
+import 'package:BeauT_Stylist/Base/AllTranslation.dart';
+import 'package:BeauT_Stylist/UI/Auth/spash.dart';
+import 'package:BeauT_Stylist/UI/bottom_nav_bar/reservations/reservations.dart';
+import 'package:BeauT_Stylist/UI/side_menu/call_us.dart';
+import 'package:BeauT_Stylist/UI/side_menu/change_lang.dart';
+import 'package:BeauT_Stylist/UI/side_menu/edit_profile.dart';
+import 'package:BeauT_Stylist/UI/side_menu/images.dart';
+import 'package:BeauT_Stylist/UI/side_menu/services.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

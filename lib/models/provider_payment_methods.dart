@@ -1,5 +1,5 @@
-import 'package:butyprovider/Base/AllTranslation.dart';
-import 'package:butyprovider/helpers/network-mappers.dart';
+import 'package:BeauT_Stylist/Base/AllTranslation.dart';
+import 'package:BeauT_Stylist/helpers/network-mappers.dart';
 
 class ProviderPaymentMethodResponse extends BaseMappable {
   bool status;

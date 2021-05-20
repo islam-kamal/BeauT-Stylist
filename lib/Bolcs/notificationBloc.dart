@@ -1,6 +1,6 @@
-import 'package:butyprovider/helpers/appEvent.dart';
-import 'package:butyprovider/helpers/appState.dart';
-import 'package:butyprovider/repo/user_repo.dart';
+import 'package:BeauT_Stylist/helpers/appEvent.dart';
+import 'package:BeauT_Stylist/helpers/appState.dart';
+import 'package:BeauT_Stylist/repo/user_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NotificationBloc extends Bloc<AppEvent, AppState> {

@@ -1,15 +1,15 @@
 import 'dart:io';
 
-import 'package:butyprovider/Base/NetworkUtil.dart';
-import 'package:butyprovider/helpers/shared_preference_manger.dart';
-import 'package:butyprovider/models/NotificationResponse.dart';
-import 'package:butyprovider/models/general_response.dart';
-import 'package:butyprovider/models/login_model.dart';
-import 'package:butyprovider/models/provider_payment_methods.dart';
-import 'package:butyprovider/models/updateProfileResponse.dart';
-import 'package:butyprovider/models/user_profile_response.dart';
+import 'package:BeauT_Stylist/Base/NetworkUtil.dart';
+import 'package:BeauT_Stylist/helpers/shared_preference_manger.dart';
+import 'package:BeauT_Stylist/models/NotificationResponse.dart';
+import 'package:BeauT_Stylist/models/general_response.dart';
+import 'package:BeauT_Stylist/models/login_model.dart';
+import 'package:BeauT_Stylist/models/provider_payment_methods.dart';
+import 'package:BeauT_Stylist/models/updateProfileResponse.dart';
+import 'package:BeauT_Stylist/models/user_profile_response.dart';
 import 'package:dio/dio.dart';
-import 'package:butyprovider/Base/AllTranslation.dart';
+import 'package:BeauT_Stylist/Base/AllTranslation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserDataRepo {

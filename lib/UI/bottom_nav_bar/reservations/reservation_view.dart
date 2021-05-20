@@ -1,20 +1,20 @@
-import 'package:butyprovider/Bolcs/canselOrderBloc.dart';
-import 'package:butyprovider/Bolcs/get_current_orders_bloc.dart';
-import 'package:butyprovider/UI/CustomWidgets/AppLoader.dart';
-import 'package:butyprovider/UI/CustomWidgets/CustomBottomSheet.dart';
-import 'package:butyprovider/UI/CustomWidgets/CustomButton.dart';
-import 'package:butyprovider/UI/CustomWidgets/EmptyItem.dart';
-import 'package:butyprovider/UI/CustomWidgets/ErrorDialog.dart';
-import 'package:butyprovider/UI/CustomWidgets/LoadingDialog.dart';
-import 'package:butyprovider/UI/CustomWidgets/on_done_dialog.dart';
-import 'package:butyprovider/helpers/appEvent.dart';
-import 'package:butyprovider/helpers/appState.dart';
-import 'package:butyprovider/models/current_ordera_model.dart';
-import 'package:butyprovider/models/general_response.dart';
+import 'package:BeauT_Stylist/Bolcs/canselOrderBloc.dart';
+import 'package:BeauT_Stylist/Bolcs/get_current_orders_bloc.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/AppLoader.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/CustomBottomSheet.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/CustomButton.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/EmptyItem.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/ErrorDialog.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/LoadingDialog.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/on_done_dialog.dart';
+import 'package:BeauT_Stylist/helpers/appEvent.dart';
+import 'package:BeauT_Stylist/helpers/appState.dart';
+import 'package:BeauT_Stylist/models/current_ordera_model.dart';
+import 'package:BeauT_Stylist/models/general_response.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:butyprovider/Base/AllTranslation.dart';
+import 'package:BeauT_Stylist/Base/AllTranslation.dart';
 class CurrentReservationView extends StatefulWidget {
   @override
   _CurrentReservationViewState createState() => _CurrentReservationViewState();

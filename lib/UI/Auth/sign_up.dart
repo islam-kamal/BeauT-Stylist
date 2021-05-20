@@ -1,16 +1,16 @@
-import 'package:butyprovider/Bolcs/signupBloc.dart';
-import 'package:butyprovider/UI/Auth/login.dart';
-import 'package:butyprovider/UI/Auth/pic_location.dart';
-import 'package:butyprovider/UI/CustomWidgets/CustomButton.dart';
-import 'package:butyprovider/UI/CustomWidgets/CustomTextFormField.dart';
-import 'package:butyprovider/UI/CustomWidgets/ErrorDialog.dart';
-import 'package:butyprovider/UI/CustomWidgets/LoadingDialog.dart';
-import 'package:butyprovider/helpers/appState.dart';
-import 'package:butyprovider/models/general_response.dart';
+import 'package:BeauT_Stylist/Bolcs/signupBloc.dart';
+import 'package:BeauT_Stylist/UI/Auth/login.dart';
+import 'package:BeauT_Stylist/UI/Auth/pic_location.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/CustomButton.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/CustomTextFormField.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/ErrorDialog.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/LoadingDialog.dart';
+import 'package:BeauT_Stylist/helpers/appState.dart';
+import 'package:BeauT_Stylist/models/general_response.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:butyprovider/Base/AllTranslation.dart';
+import 'package:BeauT_Stylist/Base/AllTranslation.dart';
 import 'active_account.dart';
 import 'complete_signUp.dart';
 

@@ -1,15 +1,15 @@
-import 'package:butyprovider/Base/AllTranslation.dart';
-import 'package:butyprovider/Bolcs/loginBloc.dart';
-import 'package:butyprovider/UI/Auth/forget_password.dart';
-import 'package:butyprovider/UI/Auth/sign_up.dart';
-import 'package:butyprovider/UI/CustomWidgets/CustomButton.dart';
-import 'package:butyprovider/UI/CustomWidgets/CustomTextFormField.dart';
-import 'package:butyprovider/UI/CustomWidgets/ErrorDialog.dart';
-import 'package:butyprovider/UI/CustomWidgets/LoadingDialog.dart';
-import 'package:butyprovider/UI/bottom_nav_bar/main_page.dart';
-import 'package:butyprovider/helpers/appEvent.dart';
-import 'package:butyprovider/helpers/appState.dart';
-import 'package:butyprovider/models/login_model.dart';
+import 'package:BeauT_Stylist/Base/AllTranslation.dart';
+import 'package:BeauT_Stylist/Bolcs/loginBloc.dart';
+import 'package:BeauT_Stylist/UI/Auth/forget_password.dart';
+import 'package:BeauT_Stylist/UI/Auth/sign_up.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/CustomButton.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/CustomTextFormField.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/ErrorDialog.dart';
+import 'package:BeauT_Stylist/UI/CustomWidgets/LoadingDialog.dart';
+import 'package:BeauT_Stylist/UI/bottom_nav_bar/main_page.dart';
+import 'package:BeauT_Stylist/helpers/appEvent.dart';
+import 'package:BeauT_Stylist/helpers/appState.dart';
+import 'package:BeauT_Stylist/models/login_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

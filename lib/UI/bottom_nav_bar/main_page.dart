@@ -1,8 +1,8 @@
-import 'package:butyprovider/Base/AllTranslation.dart';
-import 'package:butyprovider/UI/bottom_nav_bar/hom_page.dart';
-import 'package:butyprovider/UI/component/drawer.dart';
-import 'package:butyprovider/UI/side_menu/services.dart';
-import 'package:butyprovider/helpers/shared_preference_manger.dart';
+import 'package:BeauT_Stylist/Base/AllTranslation.dart';
+import 'package:BeauT_Stylist/UI/bottom_nav_bar/hom_page.dart';
+import 'package:BeauT_Stylist/UI/component/drawer.dart';
+import 'package:BeauT_Stylist/UI/side_menu/services.dart';
+import 'package:BeauT_Stylist/helpers/shared_preference_manger.dart';
 import 'package:flutter/material.dart';
 import 'Beautican_schedule.dart';
 import 'more.dart';

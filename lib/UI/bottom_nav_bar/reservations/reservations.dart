@@ -1,5 +1,5 @@
-import 'package:butyprovider/Base/AllTranslation.dart';
-import 'package:butyprovider/UI/bottom_nav_bar/reservations/reservation_view.dart';
+import 'package:BeauT_Stylist/Base/AllTranslation.dart';
+import 'package:BeauT_Stylist/UI/bottom_nav_bar/reservations/reservation_view.dart';
 import 'package:flutter/material.dart';
 
 class Reservation extends StatefulWidget {

@@ -1,10 +1,10 @@
-import 'package:butyprovider/Base/NetworkUtil.dart';
-import 'package:butyprovider/helpers/shared_preference_manger.dart';
-import 'package:butyprovider/models/current_ordera_model.dart';
-import 'package:butyprovider/models/general_response.dart';
-import 'package:butyprovider/models/home_page_response.dart';
+import 'package:BeauT_Stylist/Base/NetworkUtil.dart';
+import 'package:BeauT_Stylist/helpers/shared_preference_manger.dart';
+import 'package:BeauT_Stylist/models/current_ordera_model.dart';
+import 'package:BeauT_Stylist/models/general_response.dart';
+import 'package:BeauT_Stylist/models/home_page_response.dart';
 import 'package:dio/dio.dart';
-import 'package:butyprovider/Base/AllTranslation.dart';
+import 'package:BeauT_Stylist/Base/AllTranslation.dart';
 class UserJourny {
 //------------------------------------------------------------------------------/
   static Future<CurrentOrdersResponse> GETCURRENTORDERS() async {
